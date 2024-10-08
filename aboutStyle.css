@@ -1,0 +1,144 @@
+
+/* Reset some default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #f39c12;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: #333;
+    text-align: justify;
+    margin: 0 auto 20px auto;
+    max-width: 800px;
+    line-height: 1.8;
+    padding: 5px 50px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+strong {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Image Styling */
+.project_image {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 5px 50px;
+}
+
+/* Footer Styling */
+.footer-bottom {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin-top: 15px;
+    color: white;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align to the left */
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap; /* Allow wrapping of links */
+    }
+
+    .nav-links li {
+        margin: 0 10px; /* Horizontal margin for nav links */
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .project_image {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}

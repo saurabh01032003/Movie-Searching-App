@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contactStyle.css">
+
+    <script src="https://kit.fontawesome.com/a3ebc846d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- ----------Contact section------- -->
+    
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1>Contact Me </h1>
+                    <p><i class="fa-solid fa-envelope"></i>saurabh858182@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+91-9334375234</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100049177695474"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="www.linkedin.com/in/saurabh-kumar-548398239"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/saurabh01032003"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="./images/Resume-Updated.pdf" download class="btn btn2 ripple-button">Download CV</a>
+                </div>
+
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Enter Your Name" required>
+                        <input type="email" name="Email" placeholder="Enter Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2 ripple-button">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p> &#169; Copyright 2024 All Rights Reserved | Developed by Saurabh Mishra <i class="fa-solid fa-heart"></i> </p>
+        </div>
+    </div>
+
+
+    <!-- -----------For google sheet attachment------------ -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwE_jCEojB_osC39Sh1dhhMSFM5VDKDa0556_TR00lzchyAAy5-0qIDwaF7lyBmnULYEg/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent Successfully to Saurabh !"
+                setTimeout(function(){
+                    msg.innerHTML = "";
+                },5000)
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
