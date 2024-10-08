@@ -10,8 +10,19 @@
 </head>
 <body>
     
+    <!-- Nav-bar -->
+
+    <nav>
+        <div class="logo"><img src="./assets/project icon.png">&nbsp; Movie App</div>
+        <ul class="nav-links">
+            <li><a href="./index.html" class="nav-anchor">Home</a></li>
+            <li><a href="./about.html" class="nav-anchor">About</a></li>
+            <li><a href="./contact.html" class="nav-anchor">Contact</a></li>
+        </ul>
+    </nav>
+
+
     <!-- ----------Contact section------- -->
-    
     <div id="contact">
         <div class="container">
             <div class="row">
@@ -25,7 +36,7 @@
                         <a href="www.linkedin.com/in/saurabh-kumar-548398239"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://github.com/saurabh01032003"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="./images/Resume-Updated.pdf" download class="btn btn2 ripple-button">Download CV</a>
+                    <a href="./assets/Resume-Updated.pdf" download class="btn btn2 ripple-button">Download CV</a>
                 </div>
 
                 <div class="contact-right">
@@ -62,6 +73,34 @@
             })
             .catch(error => console.error('Error!', error.message))
         })
+    </script>
+    <script>
+        // ---------For Buttons------------
+        document.querySelector('.ripple-button').addEventListener('click', function(e) {
+        // Create a span element for the ripple
+        const ripple = document.createElement('span');
+        
+        // Get the button's position and size
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        
+        // Set the size and position of the ripple
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+        ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+        
+        // Add the ripple class to apply the animation
+        ripple.classList.add('ripple');
+        
+        // Append the ripple to the button
+        this.appendChild(ripple);
+        
+        // Remove the ripple after the animation finishes
+        ripple.addEventListener('animationend', () => {
+            ripple.remove();
+        });
+    });
+
     </script>
 </body>
 </html>

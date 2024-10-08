@@ -10,8 +10,76 @@ body{
     color: #fff;
 }
 
+/* -------------------------------------- */
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #f39c12;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 16px;
+    font-family: sans-serif;
+    transition: color 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: #f39c12;
+    border-bottom: red;
+}
+
+.nav-anchor.active{
+    background-color: red;
+    border-bottom-color: orange;
+}
+
+/* ------------------------------------- */
+
 .container{
     padding: 10px 10%;
+}
+
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .btn{
@@ -101,37 +169,44 @@ form .btn2{
     padding: 25px 0;
     background: #262626;
     font-weight: 300;
-    margin-top: 20px;
+    margin-top: 95px;
 }
 
 .copyright i{
     color: #ff004f;
 }
 
+/* ------------------------ */
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}
+
 
 /* ------------------------for submit buttons-------------------------- */
 /* Ripple effect styling */
-/* .ripple {
+.ripple {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.6);
     transform: scale(0);
     animation: ripple-effect 0.6s linear;
     pointer-events: none;
-} */
+}
 
 /* Ripple effect animation */
-/* @keyframes ripple-effect {
+@keyframes ripple-effect {
     to {
         transform: scale(4);
         opacity: 0;
     }
-} */
+}
 
 /* Optional background color change on button click */
-/* .ripple-button:active {
+.ripple-button:active {
     background-color: darkgreen;
-} */
+}
 
 
 @media only screen and (max-width: 600px){
